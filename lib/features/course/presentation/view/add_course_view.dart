@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:student_management_hive_api/features/course/domain/entity/course_entity.dart';
 import 'package:student_management_hive_api/features/course/presentation/view_model/course_view_model.dart';
+import 'package:student_management_hive_api/features/course/presentation/widget/load_course.dart';
 
 class AddCourseView extends ConsumerWidget {
   AddCourseView({super.key});
@@ -14,8 +15,8 @@ class AddCourseView extends ConsumerWidget {
     final courseState = ref.watch(courseViewModelProvider);
     // WidgetsBinding.instance.addPostFrameCallback((_) {
     //   if (courseState.showMessage) {
-    //     showSnackBar(message: 'Batch Added', context: context);
-    //     ref.read(batchViewModelProvider.notifier).resetMessage(false);
+    //     showSnackBar(message: 'Course Added', context: context);
+    //     ref.read(courseViewModelProvider.notifier).resetMessage(false);
     //   }
     // });
     return SafeArea(
@@ -75,28 +76,18 @@ class AddCourseView extends ConsumerWidget {
               ),
             ),
             gap,
-            courseState.isLoading
-                ? const Center(child: CircularProgressIndicator())
-                : Expanded(
-                    child: ListView.builder(
-                      itemCount: courseState.courses.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                            title: Text(courseState.courses[index].courseName),
-                            subtitle:
-                                Text(courseState.courses[index].courseId!),
-                            trailing: IconButton(
-                              onPressed: () {
-                                // ref
-                                //     .read(courseViewModelProvider.notifier)
-                                //     .deleteCourse(
-                                //         courseState.courses[index].courseId!);
-                              },
-                              icon: const Icon(Icons.delete),
-                            ));
-                      },
-                    ),
-                  ),
+            if (courseState.isLoading) ...{
+              const CircularProgressIndicator(),
+            } else if (courseState.error != null) ...{
+              Text(courseState.error!),
+            } else if (courseState.courses.isNotEmpty) ...{
+              Expanded(
+                child: LoadCourse(
+                  lstCourse: courseState.courses,
+                  ref: ref,
+                ),
+              ),
+            }
           ],
         ),
       ),

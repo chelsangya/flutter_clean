@@ -4,7 +4,7 @@ import 'package:student_management_hive_api/core/failure/failure.dart';
 import 'package:student_management_hive_api/features/course/domain/entity/course_entity.dart';
 import 'package:student_management_hive_api/features/course/domain/repository/course_repository.dart';
 
-final getAllUsecaseProvider = Provider<GetAllCourseUsecase>(
+final getAllCoursesUsecaseProvider = Provider<GetAllCourseUsecase>(
   (ref) =>
       GetAllCourseUsecase(courseRepository: ref.read(courseRepositoryProvider)),
 );
@@ -14,7 +14,7 @@ class GetAllCourseUsecase {
 
   GetAllCourseUsecase({required this.courseRepository});
 
-  Future<Either<Failure, List<CourseEntity>>> call() async {
+  Future<Either<Failure, List<CourseEntity>>> getAllCourses() async {
     return await courseRepository.getAllCourses();
   }
 }

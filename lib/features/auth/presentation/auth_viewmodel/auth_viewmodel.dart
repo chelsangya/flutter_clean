@@ -64,19 +64,18 @@ class AuthViewModel extends StateNotifier<AuthState> {
     final result = await _loginUseCase.loginStudent(username, password);
     state = state.copyWith(isLoading: false);
     result.fold(
-      (failure) {
-        state = state.copyWith(
-          error: failure.error,
-          showMessage: true,
-        );
-      },
+      (failure) => state = state.copyWith(
+        error: failure.error,
+        showMessage: true,
+      ),
       (success) {
-        Navigator.popAndPushNamed(context, AppRoute.homeRoute);
         state = state.copyWith(
           isLoading: false,
-          showMessage: false,
+          showMessage: true,
           error: null,
         );
+
+        Navigator.popAndPushNamed(context, AppRoute.homeRoute);
       },
     );
   }

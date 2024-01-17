@@ -17,6 +17,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController(text: 'sage');
   final _passwordController = TextEditingController(text: 'sage123');
+
+  // final _usernameController = TextEditingController();
+  // final _passwordController = TextEditingController();
   final _gap = const SizedBox(height: 8);
   bool isObscure = true;
   @override

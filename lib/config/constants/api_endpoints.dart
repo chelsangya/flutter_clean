@@ -3,12 +3,13 @@ class ApiEndpoints {
 
   static const Duration connectionTimeout = Duration(seconds: 1000);
   static const Duration receiveTimeout = Duration(seconds: 1000);
+
+  final String token =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWY3YWNkZTViNTI2NjhhMTE3YTRlMSIsImlhdCI6MTcwNTQ2OTMzOSwiZXhwIjoxNzA4MDYxMzM5fQ.VcvZ37ZSEDLNqufaJxJngW3mflDQvXOiTwCK-qhGsfY';
+  
   // For Windows
+  // static const String baseUrl = "http://192.168.82.154:3000/api/v1/";
   static const String baseUrl = "http://10.0.2.2:3000/api/v1/";
-  // static const String baseUrl = "http://192.168.137.213:3000/api/v1/";
-  // For MAC
-  //static const String baseUrl = "http://localhost:3000/api/v1/";
-  //static const String baseUrl = "http://192.168.4.4:3000/api/v1/";
 
   // ====================== Auth Routes ======================
   static const String login = "auth/login";
@@ -29,4 +30,6 @@ class ApiEndpoints {
   static const String createCourse = "course/createCourse";
   static const String deleteCourse = "course/";
   static const String getAllCourse = "course/getAllCourse";
+
+  
 }

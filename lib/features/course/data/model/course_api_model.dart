@@ -31,4 +31,21 @@ class CourseAPIModel {
       courseName: model.courseName,
     );
   }
+
+  CourseEntity toAEntity() =>
+      CourseEntity(courseId: courseId, courseName: courseName);
+
+  CourseAPIModel toHiveModel(CourseEntity entity) {
+    return CourseAPIModel(
+      courseId: entity.courseId,
+      courseName: entity.courseName,
+    );
+  }
+
+  List<CourseAPIModel> toHiveModelList(List<CourseEntity> entities) =>
+      entities.map((entity) => toHiveModel(entity)).toList();
+
+  List<CourseEntity> toEntityList(List<CourseAPIModel> models) =>
+      models.map((model) => model.toAEntity()).toList();
+ 
 }

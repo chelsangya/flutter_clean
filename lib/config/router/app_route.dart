@@ -18,7 +18,7 @@ class AppRoute {
       splashRoute: (context) => const SplashView(),
       loginRoute: (context) => const LoginView(),
       homeRoute: (context) => const HomeView(),
-      registerRoute: (context) => RegisterView(),
+      registerRoute: (context) => const RegisterView(),
       // batchStudentRoute: (context) => const BatchStudentView(null),
       // googleMapRoute: (context) => const GoogleMapView(),
     };

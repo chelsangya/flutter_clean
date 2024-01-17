@@ -25,11 +25,11 @@ class _RegisterViewState extends ConsumerState<RegisterView> {
   final _gap = const SizedBox(height: 8);
 
   final _key = GlobalKey<FormState>();
-  final _fnameController = TextEditingController(text: 'Sangya');
-  final _lnameController = TextEditingController(text: 'Koirala');
-  final _phoneController = TextEditingController(text: '9803045678');
-  final _usernameController = TextEditingController(text: 'sage');
-  final _passwordController = TextEditingController(text: 'sage1234');
+  final _fnameController = TextEditingController(text: 'Zoro');
+  final _lnameController = TextEditingController(text: 'Roronoa');
+  final _phoneController = TextEditingController(text: '9812345678');
+  final _usernameController = TextEditingController(text: 'zoro');
+  final _passwordController = TextEditingController(text: 'zoro123');
 
   bool isObscure = true;
 
