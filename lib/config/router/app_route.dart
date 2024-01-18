@@ -1,6 +1,9 @@
+// import 'dart:js';
+
 import 'package:student_management_hive_api/features/auth/presentation/view/login_view.dart';
 import 'package:student_management_hive_api/features/auth/presentation/view/register_view.dart';
 import 'package:student_management_hive_api/features/home/presentation/view/home_view.dart';
+import 'package:student_management_hive_api/features/home/presentation/view/internet_checker_view.dart';
 import 'package:student_management_hive_api/features/splash/presentation/view/splash_view.dart';
 
 class AppRoute {
@@ -12,6 +15,7 @@ class AppRoute {
   static const String registerRoute = '/register';
   static const String batchStudentRoute = '/batchStudent';
   static const String googleMapRoute = '/googleMap';
+  static const String internetRoute = '/internetChecker';
 
   static getApplicationRoute() {
     return {
@@ -19,6 +23,7 @@ class AppRoute {
       loginRoute: (context) => const LoginView(),
       homeRoute: (context) => const HomeView(),
       registerRoute: (context) => const RegisterView(),
+      internetRoute: (context) => const InternetCheckerView()
       // batchStudentRoute: (context) => const BatchStudentView(null),
       // googleMapRoute: (context) => const GoogleMapView(),
     };

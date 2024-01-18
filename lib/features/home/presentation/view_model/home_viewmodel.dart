@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:student_management_hive_api/config/router/app_route.dart';
-import 'package:student_management_hive_api/features/batch/domain/entity/batch_entity.dart';
-import 'package:student_management_hive_api/features/course/domain/entity/course_entity.dart';
+// import 'package:student_management_hive_api/features/batch/domain/entity/batch_entity.dart';
+// import 'package:student_management_hive_api/features/course/domain/entity/course_entity.dart';
 import 'package:student_management_hive_api/features/course/domain/use_case/get_all_course_usecase.dart';
 import 'package:student_management_hive_api/features/home/presentation/state/home_state.dart';
 

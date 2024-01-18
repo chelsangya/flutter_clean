@@ -35,7 +35,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
                   child: Image.asset('assets/images/splash.png'),
                 ),
                 const Text(
-                  'Student Course Management',
+                  'Student Batch Course Management',
                   style: TextStyle(
                     fontSize: 25,
                   ),
@@ -51,7 +51,7 @@ class _SplashViewState extends ConsumerState<SplashView> {
             bottom: 10,
             left: MediaQuery.of(context).size.width / 4,
             child: const Text(
-              'Developed by: Khatra Sir le',
+              'Class Project Demonstrating Clean Architecture',
               style: TextStyle(fontSize: 15),
             ),
           ),

@@ -12,7 +12,7 @@ class App extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       title: 'Student App',
       theme: AppTheme.getApplicationTheme(isDark: false),
-      initialRoute: AppRoute.splashRoute,
+      initialRoute: AppRoute.internetRoute,
       routes: AppRoute.getApplicationRoute(),
     );
   }
