@@ -17,8 +17,7 @@ class CourseRemoteRepository implements ICourseRepository {
   const CourseRemoteRepository({required this.courseRemoteDataSource});
   @override
   Future<Either<Failure, bool>> addCourse(CourseEntity course) {
-    // TODO: implement addCourse
-    throw UnimplementedError();
+    return courseRemoteDataSource.addCourse(course);
   }
 
   @override

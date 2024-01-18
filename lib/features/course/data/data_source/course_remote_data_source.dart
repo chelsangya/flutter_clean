@@ -46,6 +46,29 @@ class CourseRemoteDataSource {
       return Left(Failure(error: e.response?.data['message']));
     }
   }
+
+Future<Either<Failure, bool>> addCourse(CourseEntity course) async {
+    try {
+      CourseAPIModel courseAPIModel = CourseAPIModel.fromEntity(course);
+      var response = await dio.post(
+        ApiEndpoints.createBatch,
+        data: courseAPIModel.toJson(),
+      );
+      if (response.statusCode == 201) {
+        return const Right(true);
+      } else {
+        return Left(
+          Failure(
+            error: response.statusMessage.toString(),
+            statusCode: response.statusCode.toString(),
+          ),
+        );
+      }
+    } on DioException catch (e) {
+      return Left(Failure(error: e.response?.data['message']));
+    }
+  }
+
   Future<Either<Failure,bool>> deleteCourse(String courseId) async{
     try{
       String? token;
