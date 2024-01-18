@@ -51,7 +51,7 @@ Future<Either<Failure, bool>> addCourse(CourseEntity course) async {
     try {
       CourseAPIModel courseAPIModel = CourseAPIModel.fromEntity(course);
       var response = await dio.post(
-        ApiEndpoints.createBatch,
+        ApiEndpoints.createCourse,
         data: courseAPIModel.toJson(),
       );
       if (response.statusCode == 201) {
